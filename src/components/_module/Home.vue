@@ -100,6 +100,7 @@ export default {
       justify-content: space-between;
       padding: 10px 35px;
       .card{
+        cursor: pointer;
         margin: 10px 0px;
         border: 1px solid #C4C4C4;
         border-radius: 6px;
@@ -125,7 +126,7 @@ export default {
           display: flex;
           flex-direction: column;
           justify-content: center;
-          padding: 40px 30px;
+          padding: 40px 20px;
           h3{
             font-size: 15px;
             margin-bottom: 5px;

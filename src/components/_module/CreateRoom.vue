@@ -19,8 +19,63 @@
         <input type="time" id="time" value="12:00">
       </div>
     </div>
-    <div class=" thnn">
+    <div class="idmeet">
       <label for="id">Id</label>
+      <div class="radiobtn">
+        <div class="generate">
+          <input type="radio" name="id" id="generate">
+          <label for="generate">Generate Automatically</label>
+        </div>
+        <div class="generate">
+          <input type="radio" name="id" id="personal">
+          <label for="personal">Personal Meeting ID 447 529 6769</label>
+        </div>
+      </div>
+    </div>
+    <div class="passmeet">
+      <label for="password">Password</label>
+      <div class="checkpass">
+        <input type="checkbox" name="password" id="pass">
+        <label for="pass">Require meeting password
+           <img src="@/assets/image/lock.png" alt=""></label>
+        <div class="passwordmeet">
+          <input type="password" name="" id="">
+        </div>
+      </div>
+    </div>
+    <div class="avatar">
+      <label for="avatar">Avatar</label>
+      <div class="imageBrowse">
+        <input type="file" id="file">
+        <label for="file" id="chsimg">Choose image</label>
+        <label for="file" id="browse">Browse</label>
+      </div>
+    </div>
+    <div class="setting">
+      <label for="">Setting</label>
+      <div class="checkbox">
+        <input type="checkbox" id="mute">
+        <label for="mute">Mute users when they join</label>
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" id="require">
+        <label for="require">Require moderator approval before joining</label>
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" id="allow">
+        <label for="allow">Allow any user to start this meeting</label>
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" id="moderator">
+        <label for="moderator">All users join as moderators</label>
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" id="room">
+        <label for="room">Automatically join me into the room</label>
+      </div>
+    </div>
+    <div class="createRoom">
+      <button>Create Room</button>
     </div>
   </div>
 </template>
@@ -110,6 +165,129 @@ export default {
         width: 120px;
         height: 44px;
       }
+    }
+  }
+  .idmeet{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    label{
+      font-weight: bold;
+    }
+    .radiobtn{
+      width: 100%;
+      display: flex;
+      padding: 20px 0px;
+      .generate{
+        margin-right: 10px;
+        display: flex;
+        input{
+          margin-right: 10px;
+          margin-top: 4px;
+        }
+        label{
+          font-size: 14px;
+          font-weight: normal;
+        }
+      }
+    }
+  }
+  .passmeet{
+    width: 100%;
+    label{
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+    .checkpass{
+      margin-top: 30px;
+      display: flex;
+      input{
+        margin-right: 10px;
+        margin-top: -2px;
+      }
+      label{
+        color: #525151;
+        font-size: 14px;
+        margin-top: -5px;
+        margin-right: 10px;
+        img{
+          width: 15px;
+          height: 15px;
+        }
+      }
+      .passwordmeet{
+        margin-top: -16px;
+        input{
+          padding: 11px 15px;
+          border-radius: 6px;
+          border: 1px solid #C4C4C4;
+          outline: none;
+        }
+      }
+    }
+  }
+  .avatar{
+    width: 100%;
+    label{
+      font-weight: bold;
+    }
+    .imageBrowse{
+      margin-top: 20px;
+      margin-bottom: 20px;
+      display: flex;
+      input{
+        display: none;
+      }
+      #chsimg{
+        font-weight: normal;
+        font-size: 14px;
+        color: #C4C4C4;
+        padding: 13px 120px 13px 30px;
+        border-radius: 6px;
+        border: 1px solid #C4C4C4;
+      }
+      #browse{
+        margin-left: -10px;
+        color: white;
+        padding: 13px 20px 13px 20px;
+        background: #39A1FF;
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+    }
+  }
+  .setting{
+    width: 100%;
+    margin-bottom: 30px;
+    label{
+      font-weight: bold;
+    }
+    .checkbox{
+      margin-top: 20px;
+      input{
+        margin-right: 10px;
+      }
+      label{
+        font-weight: normal;
+        font-size: 14px;
+      }
+    }
+  }
+  .createRoom{
+    width: 100%;
+    margin-bottom: 100px;
+    button{
+      width: 100%;
+      padding: 11px 0;
+      color: white;
+      font-size: 14px;
+      font-weight: bold;
+      background: #FFCD1E;
+      outline: none;
+      border-radius: 6px;
+      border: 1px solid #ffcd1e;
     }
   }
 </style>

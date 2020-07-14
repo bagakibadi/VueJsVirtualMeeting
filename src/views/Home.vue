@@ -6,7 +6,7 @@
     <div class="container">
       <div class="side">
         <div class="sidebar">
-          <div class="infoProfile">
+          <div class="infoProfile" v-bind:class="{clickedd: clicked == 'info'}" @click="info">
             <div class="userProfile">
               <img src="@/assets/image/demo.png" alt="">
             </div>
@@ -21,7 +21,7 @@
           <div class="createRoom">
             <p>Create a room to start meeting</p>
           </div>
-          <div class="modalCreate" @click="created">
+          <div class="modalCreate" v-bind:class="{clickedd: clicked == 'create'}" @click="created">
             <img src="@/assets/image/plus.png" alt="">
             <h1>Create a Room</h1>
           </div>
@@ -31,10 +31,14 @@
         <div class="fixxed">
           <div class="fixedSub">
             <div class="subMenu">
-              <div class="home" @click="home">Home</div>
-              <div class="home" @click="event">Event</div>
-              <div class="home" @click="profile">Profile</div>
-              <div class="home" @click="security">Security</div>
+              <div class="home" v-bind:class="{active: isActive == 'home'}"
+               @click="home">Home</div>
+              <div class="home" v-bind:class="{active: isActive == 'event'}"
+               @click="event">Event</div>
+              <div class="home" v-bind:class="{active: isActive == 'prof'}"
+               @click="profile">Profile</div>
+              <div class="home" v-bind:class="{active: isActive == 'secur'}"
+               @click="security">Security</div>
             </div>
           </div>
         </div>
@@ -49,7 +53,7 @@
 </template>
 
 <script>
-import Navbar from '../components/_module/Navbar.vue';
+import Navbar from '../components/_module/NavbarSearch.vue';
 import Event from '../components/_module/Event.vue';
 import Profile from '../components/_module/Profile.vue';
 import Security from '../components/_module/Security.vue';
@@ -60,7 +64,9 @@ export default {
   name: 'Home',
   data() {
     return {
+      isActive: 'home',
       code: 1,
+      clicked: 'info',
     };
   },
   components: {
@@ -74,27 +80,52 @@ export default {
   methods: {
     home() {
       this.code = 1;
+      this.isActive = 'home';
+      this.clicked = 'info';
     },
     event() {
       this.code = 2;
+      this.isActive = 'event';
+      this.clicked = 'info';
     },
     profile() {
       this.code = 3;
+      this.isActive = 'prof';
+      this.clicked = 'info';
     },
     security() {
       this.code = 4;
+      this.isActive = 'secur';
+      this.clicked = 'info';
     },
     created() {
       this.code = 5;
+      this.clicked = 'create';
+      this.isActive = '';
+    },
+    info() {
+      this.code = 1;
+      this.isActive = 'home';
+      this.clicked = 'info';
     },
   },
 };
 </script>
 
 <style lang="scss" scoped>
+
   .navbar{
     width: 100%;
     height: 60px;
+  }
+  .active{
+    border-bottom: 1.5px solid #39A1FF !important;
+    background: whitesmoke;
+  }
+  .clickedd{
+    background: #f3f8fe !important;
+    border-left: 4px solid #39A1FF;
+    height: auto;
   }
   .container{
     width: 100%;
@@ -112,10 +143,12 @@ export default {
         flex-direction: column;
         border-right: 0.5px solid #C4C4C4;
         .infoProfile{
+          transition: .3s;
+          border-bottom: 0.5px solid #C4C4C4;
+          cursor: pointer;
           width: 100%;
           height: 70px;
-          background: #f3f8fe;
-          border-left: 4px solid #39A1FF;
+          background: white;
           display: flex;
           .userProfile{
             display: flex;
@@ -162,12 +195,14 @@ export default {
           }
         }
         .modalCreate{
+          transition: .3s all;
+          cursor: pointer;
           width: 100%;
-          height: 38px;
           display: flex;
           align-items: center;
           padding-left: 25px;
-          padding-top: 25px;
+          padding-top: 10px;
+          padding-bottom: 10px;
           img{
             margin-right: 15px;
           }
@@ -196,6 +231,7 @@ export default {
             background: white;
             display: flex;
             .home{
+              transition: .5s;
               width: calc(100% / 4);
               height: 100%;
               display: flex;
@@ -264,66 +300,6 @@ export default {
           p{
             font-weight: bold;
             font-size: 14px;
-          }
-        }
-      }
-      .cardEvent{
-        width: 100%;
-        height: auto;
-        background: white;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        padding: 10px 35px;
-        .card{
-          margin: 10px 0px;
-          border: 1px solid #C4C4C4;
-          border-radius: 6px;
-          width: 310px;
-          background: white;
-          display: flex;
-          flex-direction: column;
-          .imageCard{
-            width: 100%;
-            height: 150px;
-            img{
-              border-top-left-radius: 6px;
-              border-top-right-radius: 6px;
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-            }
-          }
-          .judulCard{
-            width: 100%;
-            height: auto;
-            border-bottom: 1px solid #C4C4C4;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 40px 30px;
-            h3{
-              font-size: 15px;
-              margin-bottom: 5px;
-            }
-            p{
-              font-size: 14px;
-              font-weight: normal;
-              span{
-                font-size: 14px;
-                font-weight: bold;
-              }
-            }
-          }
-          .tglCard{
-            width: 100%;
-            height: 80px;
-            padding: 0 30px;
-            padding-top: 10px;
-            p{
-              color: #8c8c8c;
-              font-size: 14px;
-            }
           }
         }
       }

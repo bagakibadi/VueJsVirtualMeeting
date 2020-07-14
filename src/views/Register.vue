@@ -197,5 +197,9 @@ export default {
       box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.25);
     }
   }
-
+@media only screen and (max-width: 600px){
+  .boxLogin{
+    width: 95% !important;
+  }
+}
 </style>

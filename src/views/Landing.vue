@@ -40,6 +40,7 @@ export default {
   flex-direction: column;
   section{
     width: 100%;
+    overflow: hidden;
     height: calc(100% - 60px);
     background: #39A1FF;
     display: flex;
@@ -81,6 +82,39 @@ export default {
         width: 600px;
         height: 500px;
       }
+    }
+  }
+}
+@media only screen and (max-width: 600px) {
+  .container{
+    height: auto;
+  }
+  section{
+    height: auto !important;
+    flex-direction: column-reverse;
+  }
+  .imageSection{
+    margin: 0 !important;
+    width: 100%;
+    padding-top: 20px !important;
+    img{
+      width: 100% !important;
+      height: 360px !important;
+    }
+  }
+  .titleSection{
+    margin: 0 !important;
+    width: 100% !important;
+    padding: 0px 20px;
+    h2{
+      line-height: 32px !important;
+      margin: 0 !important;
+      font-size: 30px !important;
+    }
+    button{
+      top: 0 !important;
+      width: 100% !important;
+      margin: 30px 0 !important;
     }
   }
 }

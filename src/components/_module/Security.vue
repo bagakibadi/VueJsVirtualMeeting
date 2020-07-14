@@ -4,7 +4,11 @@
       <h1>Change Password</h1>
     </div>
     <div>
-      <div class="inpname">
+      <div class="inpname pswrd">
+        <div class="inputName">
+          <label for="oldpass">Old Password</label>
+          <input type="password" placeholder="Old Password" id="oldpass">
+        </div>
         <div class="inputName">
           <label for="password">Password</label>
           <input type="password" placeholder="Password" id="password">
@@ -19,7 +23,7 @@
         <button class="cancle">Cancle</button>
       </div>
     </div>
-    <div>
+    <!-- <div>
       <div class="subJudul">
         <h1>Delete Account</h1>
       </div>
@@ -28,7 +32,7 @@
         <input type="text" id="confirmDelete">
       </div>
       <button class="btnDelete">Delete Account</button>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -46,7 +50,11 @@ export default {
     flex-direction: column;
     .subJudul{
       width: 100%;
-      padding-bottom: 20px;
+      padding-bottom: 30px;
+      h1{
+        font-weight: bold;
+        font-size: 22px;
+      }
     }
   }
   .inpname{
@@ -113,6 +121,10 @@ export default {
     .cancle:hover{
       background: #eedcdc;
     }
+  }
+  .pswrd{
+    display: flex;
+    flex-direction: column;
   }
   .confirm{
     color: #C4C4C4;

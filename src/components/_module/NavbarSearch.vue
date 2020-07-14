@@ -6,7 +6,6 @@
     <div class="buttonNav">
       <router-link to="/login"><button class="navLogin">Login</button></router-link>
       <router-link to="/signup"><button class="navSignup">Sign Up</button></router-link>
-      <img src="@/assets/image/burger.png" class="burger">
     </div>
   </nav>
 </template>
@@ -45,12 +44,6 @@ export default {
       display: flex;
       justify-content: flex-end;
       padding-right: 50px;
-      .burger{
-        width: 35px;
-        height: 35px;
-        position: relative;
-        display: none;
-      }
       a{
         margin-right: 30px;
       }
@@ -66,19 +59,5 @@ export default {
       }
     }
   }
-  @media only screen and (max-width: 600px) {
-    .navLogin{
-      display: none;
-    }
-    .navSignup{
-      display: none;
-    }
-    .buttonNav{
-      padding-right: 20px !important;
-    }
-    .burger{
-      display: block !important;
-      margin: 0 !important;
-    }
-  }
+
 </style>
