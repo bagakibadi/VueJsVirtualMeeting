@@ -35,9 +35,11 @@
     <div class="passmeet">
       <label for="password">Password</label>
       <div class="checkpass">
-        <input type="checkbox" name="password" id="pass">
-        <label for="pass">Require meeting password
-           <img src="@/assets/image/lock.png" alt=""></label>
+        <div>
+          <input type="checkbox" name="password" id="pass">
+          <label for="pass">Require meeting password
+            <img src="@/assets/image/lock.png" alt=""></label>
+        </div>
         <div class="passwordmeet">
           <input type="password" name="" id="">
         </div>
@@ -162,7 +164,7 @@ export default {
         border-radius: 6px;
         outline: none;
         border: 1px solid #C4C4C4;
-        width: 120px;
+        width: 130px;
         height: 44px;
       }
     }
@@ -228,6 +230,7 @@ export default {
   }
   .avatar{
     width: 100%;
+    padding-top: 10px;
     label{
       font-weight: bold;
     }
@@ -242,7 +245,7 @@ export default {
         font-weight: normal;
         font-size: 14px;
         color: #C4C4C4;
-        padding: 13px 120px 13px 30px;
+        padding: 13px 115px 10px 30px;
         border-radius: 6px;
         border: 1px solid #C4C4C4;
       }
@@ -288,6 +291,11 @@ export default {
       outline: none;
       border-radius: 6px;
       border: 1px solid #ffcd1e;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    .container{
+      padding: 20px 20px 0 20px !important;
     }
   }
 </style>

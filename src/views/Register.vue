@@ -42,7 +42,10 @@
             <div class="lineBot">
               <span></span>
             </div>
-            <button class="signInBut">Sign In</button>
+            <button class="signInBut">Sign Up</button>
+            <div class="already">
+              <p>Already have Account? <router-link to="/login">Login</router-link></p>
+            </div>
           </div>
         </div>
       </div>
@@ -62,6 +65,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.already{
+  a{
+    text-decoration: none;
+    color: #3A7ADF;
+  }
+}
   .navbar{
     width: 100%;
     height: 60px;
@@ -98,7 +107,7 @@ export default {
           outline: none;
           border-radius: 6px;
           background: #3A7ADF;
-          border: 1px solid blue;
+          border: 1px solid #3A7ADF;
           display: flex;
           box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.24);;
           .logoGoogle{
@@ -183,7 +192,7 @@ export default {
     }
     .signInBut{
       margin-top: 10px;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
       color: white;
       font-size: 14px;
       line-height: 18px;

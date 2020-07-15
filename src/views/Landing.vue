@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <div class="blur"></div>
     <div class="navbar">
       <Navbar/>
     </div>
@@ -29,6 +30,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .blur{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: rgba(31,42,54,.6) !important;
+    transition: 1s all;
+  }
   .navbar{
     width: 100%;
     height: 60px;
@@ -40,6 +48,7 @@ export default {
   flex-direction: column;
   section{
     width: 100%;
+    z-index: 1;
     overflow: hidden;
     height: calc(100% - 60px);
     background: #39A1FF;
@@ -93,6 +102,9 @@ export default {
     height: auto !important;
     flex-direction: column-reverse;
   }
+  .index2{
+    z-index: 2;
+  }
   .imageSection{
     margin: 0 !important;
     width: 100%;
@@ -116,6 +128,9 @@ export default {
       width: 100% !important;
       margin: 30px 0 !important;
     }
+  }
+  .blur{
+    height: 752px;
   }
 }
 </style>

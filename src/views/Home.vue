@@ -269,7 +269,6 @@ export default {
           display: flex;
           flex-direction: column;
           justify-content: center;
-          justify-self: space-between;
           h1{
             font-size: 27px;
             margin-bottom: 15px;
@@ -303,6 +302,28 @@ export default {
           }
         }
       }
+    }
+  }
+  @media only screen and (max-width: 600px){
+    .container{
+      display: block !important;
+    }
+    .side{
+      transition: 1s all;
+      z-index: 1;
+      left: -275px;
+      height: 100vh !important;
+      width: 275px !important;
+      position: absolute !important;
+    }
+    .sede{
+      left: 0px !important;
+    }
+    .content{
+      width: 100% !important;
+    }
+    .subMenu{
+      width: 100% !important;
     }
   }
 </style>

@@ -35,6 +35,9 @@
               <span></span>
             </div>
             <button class="signInBut">Sign In</button>
+            <div class="already">
+              <p>Don't have Account? <router-link to="/signup">Register</router-link></p>
+            </div>
           </div>
         </div>
       </div>
@@ -54,6 +57,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .already{
+    a{
+      text-decoration: none;
+      color: #3A7ADF;
+    }
+  }
   .navbar{
     width: 100%;
     height: 60px;

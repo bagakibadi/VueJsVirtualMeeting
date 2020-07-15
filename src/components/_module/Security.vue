@@ -97,6 +97,8 @@ export default {
   .button{
     margin-top: 40px;
     margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
     button{
       width: 230px;
       height: 45px;
@@ -145,4 +147,21 @@ export default {
   .btnDelete:hover{
     background: #e42b01;
   }
+    @media only screen and (max-width: 600px){
+      .inputName{
+        width: 100%;
+        input{
+          width: 100%;
+        }
+      }
+      .button{
+        button{
+          width: 100%;
+        }
+        .change{
+          margin-right: 0px;
+          margin-bottom: 15px;
+        }
+      }
+    }
 </style>

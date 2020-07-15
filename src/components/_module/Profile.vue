@@ -101,6 +101,7 @@ export default {
     .inpname{
       width: 100%;
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
     }
   }
@@ -146,5 +147,25 @@ export default {
     font-weight: bold;
     border-radius: 6px;
     border: 1px solid #FFCD1E;
+  }
+  @media only screen and (max-width: 600px) {
+    .content{
+      width: 100% !important;
+    }
+    .inputName{
+      width: 100%;
+      input{
+        width: 100%;
+      }
+      textarea{
+        width: 100%;
+      }
+      .count{
+        width: 100%;
+      }
+    }
+    .save{
+      width: 100%;
+    }
   }
 </style>

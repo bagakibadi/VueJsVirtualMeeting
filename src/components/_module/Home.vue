@@ -167,4 +167,10 @@ export default {
       }
     }
   }
+  @media only screen and (max-width: 600px){
+    .infoCard{
+      width: 100% !important;
+      padding: 35px 35px !important;
+    }
+  }
 </style>

@@ -4,9 +4,18 @@
       <router-link to="/"><img src="@/assets/image/Exhibition.png" alt=""></router-link>
     </div>
     <div class="buttonNav">
-      <router-link to="/login"><button class="navLogin">Login</button></router-link>
-      <router-link to="/signup"><button class="navSignup">Sign Up</button></router-link>
-      <img src="@/assets/image/burger.png" class="burger">
+      <div class="hide">
+        <div class="btnlogin">
+          <router-link to="/login"><button class="navLogin">Login</button></router-link>
+        </div>
+        <div class="btnsign">
+          <router-link to="/signup"><button class="navSignup">Sign Up</button></router-link>
+        </div>
+      </div>
+      <label for="burger">
+        <i class="fa fa-bars" @click="burger"></i>
+      </label>
+      <input type="checkbox" id="burger">
     </div>
   </nav>
 </template>
@@ -14,6 +23,13 @@
 <script>
 export default {
   name: 'Navbar',
+  methods: {
+    burger() {
+      document.querySelector('.hide').classList.toggle('seek');
+      document.querySelector('nav').classList.toggle('naver');
+      document.querySelector('.blur').classList.toggle('index2');
+    },
+  },
 };
 </script>
 
@@ -26,6 +42,7 @@ export default {
     align-items: center;
     position: fixed;
     z-index: 5;
+    transition: 1s all;
     .logoNav{
       width: 274px;
       height: 100%;
@@ -45,10 +62,17 @@ export default {
       display: flex;
       justify-content: flex-end;
       padding-right: 50px;
+      .hide{
+        display: flex;
+        transition: 1s all;
+      }
       .burger{
         width: 35px;
         height: 35px;
         position: relative;
+        display: none;
+      }
+      .fa-bars{
         display: none;
       }
       a{
@@ -66,19 +90,75 @@ export default {
       }
     }
   }
+  #burger{
+    display: none;
+  }
   @media only screen and (max-width: 600px) {
-    .navLogin{
-      display: none;
+    .naver{
+      background: #086cc4;
     }
-    .navSignup{
-      display: none;
+    .btnlogin{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 45px;
+      width: 100%;
+      background: #086cc4;
+      height: 45px;
+      border-bottom: 1px solid #79a3c7;
+      border-top: 1px solid #79a3c7;
+      a{
+        margin: 0 !important;
+        button{
+          border: none;
+          color: white;
+        }
+      }
+    }
+    .btnsign{
+      width: 100%;
+      background: #086cc4;
+      position: absolute;
+      top: 90px;
+      height: 45px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 1px solid #79a3c7;
+      a{
+        margin: 0 !important;
+        button{
+          border: none;
+          color: white;
+        }
+      }
     }
     .buttonNav{
-      padding-right: 20px !important;
+      padding-right: 0 !important;
+      .hide{
+        width: 100%;
+      }
+    }
+    .hide{
+      right: -380px !important;
+      position: absolute;
+    }
+    .seek{
+      right: 0 !important;
     }
     .burger{
       display: block !important;
       margin: 0 !important;
+      margin-right: 20px !important;
+    }
+    .fa-bars{
+      font-size: 30px;
+      color: white;
+      position: relative;
+      // display: none;
+      display: block !important;
+      margin-right: 15px;
     }
   }
 </style>
