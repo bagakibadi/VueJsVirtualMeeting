@@ -10,10 +10,4 @@
   font-size: 15px;
   box-sizing: border-box;
 }
-  .vjs-big-play-button{
-    left: 50% !important;
-    top: 50% !important;
-    transform: translate(-50%, -50%);
-  }
-
 </style>

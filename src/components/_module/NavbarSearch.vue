@@ -46,8 +46,10 @@ export default {
   name: 'Navbar',
   methods: {
     burger() {
-      // document.querySelector('.side').classList.toggle('sede');
-      console.log(document.querySelector('.chat').classList.toggle('postAbso'));
+      document.querySelector('.side').classList.toggle('sede');
+      // document.querySelector('.chat').classList.toggle('postAbso');
+      // document.querySelector('.sidebarvid').classList.toggle('displayflex');
+      // console.log(document.querySelector('.sidebarvid'));
     },
     search() {
       document.querySelector('.fa-search').classList.toggle('forhide');
@@ -60,6 +62,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .displayflex{
+    display: flex !important;
+  }
   .fa-close{
     display: none;
   }
