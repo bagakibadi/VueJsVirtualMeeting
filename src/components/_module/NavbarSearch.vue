@@ -46,7 +46,8 @@ export default {
   name: 'Navbar',
   methods: {
     burger() {
-      document.querySelector('.side').classList.toggle('sede');
+      // document.querySelector('.side').classList.toggle('sede');
+      console.log(document.querySelector('.chat').classList.toggle('postAbso'));
     },
     search() {
       document.querySelector('.fa-search').classList.toggle('forhide');
@@ -199,6 +200,7 @@ export default {
       }
     }
     .fa-bars{
+      z-index: 2;
       display: block !important;
       margin: 0 !important;
     }

@@ -1,12 +1,19 @@
 <template>
   <div class="container">
     <div class="navbar">
+      <Navbar/>
     </div>
     <div class="content">
       <div class="video">
-        <video width="100%" autoplay muted controls>
-          <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
-        </video>
+        <div class="player">
+          <h3>Using Html5 to play m3u8 media file</h3>
+            <video-player ref="videoPlayer"
+                          class="vjs-custom-skin"
+                          :options="playerOptions"
+                          @play="onPlayerPlay($event)"
+                          @ready="onPlayerReady($event)">
+            </video-player>
+        </div>
       </div>
       <div class="chat">
         <div class="info">
@@ -63,12 +70,33 @@
 </template>
 
 <script>
+import VideoPlayer from '@/components/_module/VideoPlayer.vue';
+import Navbar from '@/components/_module/NavbarSearch.vue';
+
 export default {
+  name: 'Meeting',
+  components: {
+    VideoPlayer,
+    Navbar,
+  },
   data() {
     return {
       code: 1,
       isActive: 'chat',
+      playerOptions: {
+        autoplay: true,
+        controls: true,
+        controlBar: {
+          timeDivider: false,
+          durationDisplay: false,
+        },
+      },
     };
+  },
+  computed: {
+    player() {
+      return this.$refs.videoPlayer.player;
+    },
   },
   methods: {
     chat() {
@@ -81,28 +109,69 @@ export default {
       console.log(this.code);
       this.code = 2;
     },
+    onPlayerPlay(player) {
+      console.log('player play!', player);
+    },
+    onPlayerReady(player) {
+      console.log('player ready!', player);
+      this.player.play();
+    },
+    playVideo(source) {
+      const video = {
+        withCredentials: false,
+        type: 'application/x-mpegurl',
+        src: source,
+      };
+      this.player.reset();
+      // in IE11 (mode IE10) direct usage of src() when <src> is already set, generated errors,
+      this.player.src(video);
+      // this.player.load()
+      this.player.play();
+    },
+  },
+  mounted() {
+    const src = 'https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8';
+    this.playVideo(src);
   },
 };
 </script>
 
 <style lang="scss" scoped>
+  .player {
+    width: 100%;
+    height: 550px;
+  }
+  .vjs-custom-skin {
+    height: 100% !important;
+  }
+  .vjs-custom-skin{
+    width: 100%;
+    height: 550px;
+  }
+  .video-js{
+    width: 100%;
+    height: 700px;
+  }
+  .vjs-custom-skin /deep/ .video-js {
+    height: 100%;
+  }
   #camera{
     display: none;
   }
   .container{
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     background: white;
     display: flex;
     flex-direction: column;
     .navbar{
       width: 100%;
-      height: 70px;
+      height: 60px;
       background: #39A1FF;
     }
     .content{
       width: 100%;
-      height: calc(100vh - 70px);
+      height: calc(100vh - 60px);
       display: flex;
       .video{
         width: 70%;
@@ -186,7 +255,7 @@ export default {
               }
               .isiChat{
                 display: flex;
-                width: 290px;
+                width: 100%;
                 p{
                   align-items: center;
                   font-size: 14px;
@@ -251,6 +320,37 @@ export default {
           }
         }
       }
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    .video{
+      display: flex;
+      position: absolute !important;
+      width: 100% !important;
+      overflow: hidden;
+      height: calc(100% - 60px) !important;
+    }
+    .content{
+      overflow: hidden;
+    }
+    .chat{
+      width: 100% !important;
+      display: none;
+      z-index: 1;
+    }
+    .infopeople{
+      width: 50% !important;
+    }
+    .sendMsg{
+      input{
+        width: 275px !important;
+      }
+    }
+    .fa-paper-plane{
+      margin-left: 6px !important;
+    }
+    .postAbso{
+      display: block;
     }
   }
 </style>
