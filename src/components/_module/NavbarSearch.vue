@@ -34,8 +34,11 @@
       </div>
       <div class="imgprofile">
         <img src="@/assets/image/demo.png" class="profile">
+        <div class="infoaccount">
+          <h1>Andini Ishmas</h1>
+          <p>andiniishmash@gmail.com</p>
+        </div>
       </div>
-      <!-- <img src="@/assets/image/burger.png" class="burger"> -->
       <i class="fa fa-bars" @click="burger"></i>
     </div>
   </nav>
@@ -47,9 +50,6 @@ export default {
   methods: {
     burger() {
       document.querySelector('.side').classList.toggle('sede');
-      // document.querySelector('.chat').classList.toggle('postAbso');
-      // document.querySelector('.sidebarvid').classList.toggle('displayflex');
-      // console.log(document.querySelector('.sidebarvid'));
     },
     search() {
       document.querySelector('.fa-search').classList.toggle('forhide');
@@ -115,7 +115,7 @@ export default {
       flex-direction: row;
       align-items: center;
       justify-content: flex-end;
-      padding-right: 50px;
+      padding-right: 200px;
       .navul{
         ul{
           margin: 0;
@@ -156,11 +156,26 @@ export default {
         width: 45px;
         height: 45px;
         border-radius: 100%;
+        display: flex;
         img{
           width: 100%;
           height: 100%;
           border-radius: 100%;
           object-fit: cover;
+        }
+        .infoaccount{
+          margin-left: 10px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          h1{
+            font-size: 16px;
+            color: white;
+          }
+          p{
+            color: #e6e6e6;
+            font-size: 12px;
+          }
         }
       }
       .fa-bars{

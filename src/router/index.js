@@ -4,7 +4,6 @@ import Landing from '../views/Landing.vue';
 import Login from '../views/Login.vue';
 import Signup from '../views/Register.vue';
 import Home from '../views/Home.vue';
-import Meeting from '../views/Meeting.vue';
 
 Vue.use(VueRouter);
 
@@ -28,11 +27,6 @@ const routes = [
     path: '/home',
     name: 'Home',
     component: Home,
-  },
-  {
-    path: '/meet',
-    name: 'Meeting',
-    component: Meeting,
   },
 ];
 
