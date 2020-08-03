@@ -25,6 +25,10 @@
             <img src="@/assets/image/plus.png" alt="">
             <h1>Create a Room</h1>
           </div>
+          <div class="logoutt">
+            <i class="fa fa-sign-out"></i>
+            <router-link to="/logout">Keluar</router-link>
+          </div>
         </div>
       </div>
       <div class="content">
@@ -207,6 +211,24 @@ export default {
             margin-right: 15px;
           }
         }
+        .logoutt{
+          cursor: pointer;
+          padding: 20px 20px;
+          width: 100%;
+          height: auto;
+          display: none;
+          align-items: center;
+          i{
+            margin-right: 5px;
+            font-size: 22px;
+          }
+          a{
+            color: black;
+            font-size: 20px;
+            font-weight: normal;
+            text-decoration: none;
+          }
+        }
       }
     }
     .content{
@@ -231,7 +253,7 @@ export default {
             background: white;
             display: flex;
             .home{
-              transition: .5s;
+              // transition: .5s;
               width: calc(100% / 4);
               height: 100%;
               display: flex;
@@ -245,10 +267,10 @@ export default {
               border-bottom: 1.5px solid #39A1FF;
               background: whitesmoke;
             }
-            .home:visited {
-              border-bottom: 1.5px solid red;
-              background: blue;
-            }
+            // .home:visited {
+            //   border-bottom: 1.5px solid red;
+            //   background: blue;
+            // }
           }
         }
       }
@@ -307,6 +329,9 @@ export default {
   @media only screen and (max-width: 600px){
     .container{
       display: block !important;
+    }
+    .logoutt{
+      display: flex !important;
     }
     .side{
       transition: 1s all;

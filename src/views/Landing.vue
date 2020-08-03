@@ -9,7 +9,7 @@
         <h2>The virtual veneu for all your events</h2>
         <p>Meeting is an online events platform where you can create engaging virtual
            events that connect people around the globe</p>
-        <button>Get early access</button>
+        <button><router-link to="/home">Get Early Access</router-link></button>
       </div>
       <div class="imageSection">
         <img src="@/assets/image/backgroundLanding.png" alt="">
@@ -48,6 +48,7 @@ export default {
   flex-direction: column;
   section{
     width: 100%;
+    height: auto;
     z-index: 1;
     overflow: hidden;
     height: calc(100% - 60px);
@@ -80,9 +81,12 @@ export default {
         background: #FFCD1E;
         border: none;
         border-radius: 6px;
-        color: white;
-        font-size: 18px;
         outline: none;
+        a{
+          font-size: 18px;
+          color: white;
+          text-decoration: none;
+        }
       }
     }
     .imageSection{

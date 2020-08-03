@@ -141,7 +141,7 @@ export default {
       }
     }
     .hide{
-      right: -380px !important;
+      right: -480px !important;
       position: absolute;
     }
     .seek{
